@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
-const distPath = path.resolve(__dirname, 'src/lib')
-const ss = path.resolve(__dirname, 'src/lib/mobx.manifest.json')
+const distPath = path.resolve(__dirname, 'dist/lib')
+const ss = path.resolve(distPath, 'mobx.manifest.json')
 
 module.exports = {
   entry: {
-    mobx: 'mobx'
+    mobx: ['mobx']
   },
   output: {
     path: distPath,
