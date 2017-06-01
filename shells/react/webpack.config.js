@@ -8,9 +8,9 @@ module.exports = {
     'app': path.resolve(__dirname, './src/app.jsx'),
   },
   output: {
-    path: path.resolve(__dirname, 'assets'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    publicPath: '/assets/',
+    publicPath: '/dist/',
   },
   plugins: [
     new HtmlWebpackPlugin({

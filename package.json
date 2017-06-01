@@ -5,6 +5,7 @@
   "author": "炒饭 <chaofan@2dfire.com>",
   "license": "MIT",
   "scripts": {
+    "dev:weapp": "cd shells/weapp && webpack --watch --display-chunks",
     "dev:react": "cd shells/react && webpack-dev-server --progress --inline --hot --host 0.0.0.0 --port 7778",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
@@ -22,11 +23,15 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.1",
     "html-webpack-plugin": "^2.28.0",
     "jsx-loader": "^0.13.2",
+    "ora": "^1.2.0",
     "react-loader": "^2.4.2",
+    "shelljs": "^0.7.7",
     "webpack-dev-server": "^2.4.5"
   }
 }

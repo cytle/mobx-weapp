@@ -1,3 +1,4 @@
 node_modules
 assets
-shells/src/pages/logics
+shells/weapp/src/logics
+shells/react/dist
