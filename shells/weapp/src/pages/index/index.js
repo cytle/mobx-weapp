@@ -1,26 +1,42 @@
-//index.js
-//获取应用实例
-import mobx from 'mobx'
-import timerView from 'store/timerView'
-console.log('asd')
+import { mobx, store } from '../../lib/logic'
+
 var app = getApp()
+
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    s: ''
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({url: '../logs/logs'})
+    store.timerView.as()
+    // wx.navigateTo({url: '../logs/logs'})
+  },
+  autoData() {
+    return {
+      s: store.timerView.timer * 12
+    }
+  },
+  computed: {
+    motto() {
+      console.warn(this.data);
+      console.warn(this.data.s);
+      return store.timerView.sad + 'asd' + this.data.s
+    }
   },
   onLoad: function() {
-    console.log('onLoad')
+    console.warn(this.data);
     mobx.autorun(() => {
-      console.log('asd');
-      this.setData({
-        motto: timerView.timer + 'asd'
-      })
+      this.setData(this.autoData())
     })
+    for (const key in this.computed) {
+      mobx.autorun(() => {
+        this.setData({
+          [key]: this.computed[key].call(this)
+        })
+      })
+    }
+    console.warn(this.data);
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo) {
