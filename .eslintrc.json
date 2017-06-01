@@ -16,6 +16,11 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+      "wx": true,
+      "Page": true,
+      "getApp": true
+    },
     "rules": {
         "indent": [
             "error",
