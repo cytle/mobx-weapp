@@ -1,14 +1,11 @@
 import { extendObservable, action } from 'mobx'
+import Todo from './item'
 
 export default function todos () {
   extendObservable(this, {
-    start: Date.now(),
-    current: Date.now(),
-    get elapsedTime() {
-      return (this.current - this.start) + 'seconds'
-    },
-    tick: action(function() {
-      this.current = Date.now()
+    items: [],
+    add: action(function(content) {
+      this.items.push(new Todo(content))
     })
   })
 }

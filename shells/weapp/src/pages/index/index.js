@@ -1,7 +1,11 @@
 import { mobx, store } from '../../lib/logic'
-
+import { mapActions } from '../../utils/util'
 var app = getApp()
 
+const { timerView, todos } = store
+const actions = mapActions({
+  addTodo: todos.add
+})
 Page({
   data: {
     userInfo: {},
@@ -9,19 +13,19 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    store.timerView.as()
+    const addTodo = todos.add
+    addTodo('asdasd' + this.data.s)
     // wx.navigateTo({url: '../logs/logs'})
   },
   autoData() {
     return {
-      s: store.timerView.timer * 12
+      s: timerView.timer * 12,
+      todos
     }
   },
   computed: {
     motto() {
-      console.warn(this.data);
-      console.warn(this.data.s);
-      return store.timerView.sad + 'asd' + this.data.s
+      return timerView.sad + 'asd' + this.data.s
     }
   },
   onLoad: function() {

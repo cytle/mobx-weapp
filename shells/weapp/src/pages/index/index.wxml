@@ -9,4 +9,7 @@
     <br />
     <text class="user-motto">{{motto}}</text>
   </view>
+  <block wx:for="{{todos.items}}" wx:for-item="todo" wx:key="*this">
+    <text class="log-item">{{index + 1}}. {{todo.content}}</text>
+  </block>
 </view>
