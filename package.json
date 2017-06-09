@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev:weapp": "cd shells/weapp && webpack --watch --display-chunks",
+    "dev:weapp-bill": "cd shells/weapp-bill && webpack --watch --display-chunks",
     "dev:react": "cd shells/react && webpack-dev-server --progress --inline --hot --host 0.0.0.0 --port 7778",
+    "dev:react-bill": "cd shells/react-bill && webpack-dev-server --progress --inline --hot --host 0.0.0.0 --port 7779",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
@@ -23,6 +25,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
@@ -32,13 +35,16 @@
     "eslint-config-vue": "^2.0.2",
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-vue": "^2.0.1",
+    "flux": "^3.1.2",
     "html-webpack-plugin": "^2.28.0",
     "jsx-loader": "^0.13.2",
+    "keymirror": "^0.1.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "ora": "^1.2.0",
     "react-css-modules": "^4.3.0",
     "react-loader": "^2.4.2",
+    "seamless-immutable": "^7.1.2",
     "shelljs": "^0.7.7",
     "style-loader": "^0.18.2",
     "webpack-dev-server": "^2.4.5"
