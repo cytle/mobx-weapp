@@ -2,18 +2,13 @@ import { action, observable } from 'mobx'
 
 const appState = observable({
   timer: 1,
-  sad: 10
+  resetTimer() {
+    this.timer = 0
+  }
 })
 
-setInterval(action(function tick() {
+setInterval(action(function() {
   appState.timer += 1
 }), 1000)
-
-appState.clear = action(function tick() {
-  appState.timer = 0
-})
-appState.as = action(function tick() {
-  appState.sad *= 10
-})
 
 export default appState

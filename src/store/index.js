@@ -1,9 +1,9 @@
 import timerView from './timerView'
-import Todos from './todos'
+import todos from './todos'
 
 // module.exports.default = module.exports
 
 export default {
   timerView,
-  todos: new Todos()
+  todos
 }

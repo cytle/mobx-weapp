@@ -1,18 +1,14 @@
-import { extendObservable, action } from 'mobx'
+import { extendObservable } from 'mobx'
 
-let uuid = 0
-
+let uid = 0
 export default function todo (content) {
   extendObservable(this, {
-    start: Date.now(),
-    current: Date.now(),
-    id: uuid++,
+    startAt: Date.now(),
+    isFinish: false,
+    uid: uid++,
     content,
-    get elapsedTime() {
-      return (this.current - this.start) + 'seconds'
-    },
-    tick: action(function() {
-      this.current = Date.now()
-    })
+    toggle: function() {
+      this.isFinish = !this.isFinish
+    }
   })
 }
