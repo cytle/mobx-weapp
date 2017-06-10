@@ -1,14 +1,14 @@
 import { action, observable } from 'mobx'
 
 const appState = observable({
-  timer: 1,
+  time: 1,
   resetTimer() {
-    this.timer = 0
+    this.time = 0
   }
 })
 
 setInterval(action(function() {
-  appState.timer += 1
+  appState.time += 1
 }), 1000)
 
 export default appState
