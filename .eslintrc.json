@@ -16,10 +16,16 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+      "App": true,
+      "wx": true,
+      "Page": true,
+      "getApp": true
+    },
     "rules": {
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
