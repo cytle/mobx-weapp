@@ -48,4 +48,4 @@ src
 
 ## 截图
 
-[!demo](https://raw.githubusercontent.com/cytle/mobx-weapp/master/images/demo.png)
+![demo](https://raw.githubusercontent.com/cytle/mobx-weapp/a5acb7a38a257ac63c892532a8cdb48be4b70834/images/demo.png)
